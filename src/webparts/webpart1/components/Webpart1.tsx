@@ -122,7 +122,7 @@ const Webpart1: React.FC<IWebpart1Props> = ({
             href="https://developer.microsoft.com/en-us/fluentui#/controls/web/link"
             underline
           >
-            disabled link
+            disabled link.
           </Link>
         </Text>
         <Text>
