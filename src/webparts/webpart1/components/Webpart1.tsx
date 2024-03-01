@@ -2,8 +2,14 @@ import * as React from "react";
 import styles from "./Webpart1.module.scss";
 import type { IWebpart1Props } from "./IWebpart1Props";
 import { escape } from "@microsoft/sp-lodash-subset";
-import { DefaultButton, Link, Text } from "@fluentui/react";
-import { _onMenuClick, addIcon, menuProps } from "./extras";
+import { CompoundButton, DefaultButton, Link, PrimaryButton, Stack, Text } from "@fluentui/react";
+import {
+  _alertClicked,
+  _onMenuClick,
+  addIcon,
+  menuProps,
+  stackTokens,
+} from "./extras";
 
 const Webpart1: React.FC<IWebpart1Props> = ({
   description,
@@ -12,7 +18,7 @@ const Webpart1: React.FC<IWebpart1Props> = ({
   hasTeamsContext,
   userDisplayName,
 }) => {
-  function handleClickOnLink(ev: React.MouseEvent<unknown>) {
+  function handleClickOnLink(ev: React.MouseEvent<unknown>): void {
     window.alert("clicked on Link component which is rendered as html button");
   }
 
@@ -126,11 +132,11 @@ const Webpart1: React.FC<IWebpart1Props> = ({
           </Link>
         </Text>
         <Text>
-          It's not recommended to use Links with imgs because Links are meant to
-          render textual inline content. Buttons are inline-block or in the case
-          of imgs, block. However, it is possible to create a linked image
-          button by making a button with an unstyled variant and adding the img
-          content and href source to that.
+          It&apos;s not recommended to use Links with imgs because Links are
+          meant to render textual inline content. Buttons are inline-block or in
+          the case of imgs, block. However, it is possible to create a linked
+          image button by making a button with an unstyled variant and adding
+          the img content and href source to that.
         </Text>
 
         <DefaultButton
@@ -148,6 +154,83 @@ const Webpart1: React.FC<IWebpart1Props> = ({
           // disabled={disabled}
           // checked={checked}
         />
+        <Stack horizontal wrap tokens={stackTokens}>
+          <DefaultButton
+            text="Standard"
+            split
+            splitButtonAriaLabel="See 2 options"
+            aria-roledescription="split button"
+            menuProps={menuProps}
+            onClick={_alertClicked}
+            // disabled={disabled}
+            // checked={checked}
+          />
+          <DefaultButton
+            text="Primary"
+            primary
+            split
+            splitButtonAriaLabel="See 2 options"
+            aria-roledescription="split button"
+            menuProps={menuProps}
+            onClick={_alertClicked}
+            // disabled={disabled}
+            // checked={checked}
+          />
+          <DefaultButton
+            text="Main action disabled"
+            primaryDisabled
+            split
+            splitButtonAriaLabel="See 2 options"
+            aria-roledescription="split button"
+            menuProps={menuProps}
+            onClick={_alertClicked}
+            // disabled={disabled}
+            // checked={checked}
+          />
+          <DefaultButton
+            text="Disabled"
+            disabled
+            split
+            splitButtonAriaLabel="See 2 options"
+            aria-roledescription="split button"
+            menuProps={menuProps}
+            onClick={_alertClicked}
+            // checked={checked}
+          />
+        </Stack>
+        <Stack horizontal tokens={stackTokens}>
+          <CompoundButton
+            secondaryText="This is the secondary text."
+            // disabled={disabled}
+            // checked={checked}
+          >
+            Standard
+          </CompoundButton>
+          <CompoundButton
+            primary
+            secondaryText="This is the secondary text."
+            // disabled={disabled}
+            // checked={checked}
+          >
+            Primary
+          </CompoundButton>
+        </Stack>
+        <Stack horizontal tokens={stackTokens}>
+          <DefaultButton
+            text="Standard"
+            onClick={_alertClicked}
+            allowDisabledFocus
+            // disabled={disabled}
+            // checked={checked}
+          />
+          <PrimaryButton
+            text="Primary"
+            onClick={_alertClicked}
+            allowDisabledFocus
+            // disabled={disabled}
+            // checked={checked}
+          />
+        </Stack>
       </div>
     </section>
   );

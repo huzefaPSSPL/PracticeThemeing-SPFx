@@ -1,4 +1,4 @@
-import { IContextualMenuProps, IIconProps } from "@fluentui/react";
+import { IContextualMenuProps, IIconProps, IStackTokens } from "@fluentui/react";
 
 export const menuProps: IContextualMenuProps = {
   // For example: disable dismiss if shift key is held down while dismissing
@@ -31,4 +31,10 @@ export const addIcon: IIconProps = { iconName: 'Add' };
 
 export function _onMenuClick(ev?: React.SyntheticEvent<any>): void {
   console.log(ev);
+}
+
+export const stackTokens: IStackTokens = { childrenGap: 40 };
+
+export function _alertClicked(): void {
+  alert('Clicked');
 }
