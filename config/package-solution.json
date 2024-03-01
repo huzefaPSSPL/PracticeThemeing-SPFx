@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "practice-themeing-client-side-solution",
+    "id": "b3c8eeb2-7a0f-46a9-b195-c26d67eecc3c",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true,
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "developer": {
+      "name": "",
+      "websiteUrl": "",
+      "privacyUrl": "",
+      "termsOfUseUrl": "",
+      "mpnId": "Undefined-1.18.2"
+    },
+    "metadata": {
+      "shortDescription": {
+        "default": "practice-themeing description"
+      },
+      "longDescription": {
+        "default": "practice-themeing description"
+      },
+      "screenshotPaths": [],
+      "videoUrl": "",
+      "categories": []
+    },
+    "features": [
+      {
+        "title": "practice-themeing Feature",
+        "description": "The feature that activates elements of the practice-themeing solution.",
+        "id": "a058460c-7116-4d4f-b1e0-214ecdb154d2",
+        "version": "1.0.0.0"
+      }
+    ]
+  },
+  "paths": {
+    "zippedPackage": "solution/practice-themeing.sppkg"
+  }
+}

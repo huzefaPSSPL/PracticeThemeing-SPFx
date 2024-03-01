@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "18.19.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.12.0"
+    },
+    "version": "1.18.2",
+    "libraryName": "practice-themeing",
+    "libraryId": "b3c8eeb2-7a0f-46a9-b195-c26d67eecc3c",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "practice-themeing",
+    "solutionShortDescription": "practice-themeing description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
